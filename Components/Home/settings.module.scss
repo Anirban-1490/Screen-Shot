@@ -1,0 +1,18 @@
+.settings {
+    overflow: hidden;
+
+    height: 0;
+
+    width: clamp(21rem, 48vw, 40rem);
+    .md-text-input {
+        font-size: 1rem;
+        height: 2.7rem;
+    }
+    .cnt {
+        display: flex;
+        gap: 3%;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+}

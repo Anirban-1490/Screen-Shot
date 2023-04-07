@@ -1,0 +1,32 @@
+.section {
+    padding: 0 1.4rem;
+    margin-bottom: 12vh;
+    .card {
+        width: 30em;
+        height: 19em;
+        display: flex;
+        flex-direction: column;
+        background-color: whitesmoke;
+        text-align: center;
+        color: #0a4747;
+        &:nth-child(2) {
+            background-color: #03d8d8;
+            color: #0a4747;
+        }
+        header {
+            h3 {
+                padding: 1rem 0;
+                font-size: 2rem;
+            }
+        }
+        .card-body {
+            font-size: 1.3rem;
+
+            p {
+                padding: 0 0.5rem;
+                opacity: 56%;
+                // font-weight: bold;
+            }
+        }
+    }
+}
