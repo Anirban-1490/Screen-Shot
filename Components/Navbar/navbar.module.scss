@@ -1,0 +1,23 @@
+.nav {
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    header {
+        h2 {
+            padding: 0.7rem;
+            &::first-letter {
+                color: aqua;
+                font-size: 1.05em;
+            }
+            span {
+                color: aqua;
+            }
+        }
+    }
+}
