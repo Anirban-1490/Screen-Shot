@@ -29,6 +29,7 @@ import { Container } from "Components/Container/Container";
 import { Custominput } from "Components/CustomInput/CustomInput";
 import { Settings } from "Components/Home/Settings";
 import { Feature } from "Components/Home/Feature";
+import { ServerlessPath } from "Serverless";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({ weight: "500", subsets: ["latin"] });
@@ -38,7 +39,7 @@ export default function Home() {
 
     const { data, mutate, error, isError, isLoading } = useMutation(
         (inputData) => {
-            return axios.post(`http://localhost:3000/api/sshot`, inputData, {
+            return axios.post(`${ServerlessPath.path}/api/sshot`, inputData, {
                 headers: {
                     exponential_api_secret: process.env.API_KEY,
                 },
