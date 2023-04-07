@@ -45,8 +45,9 @@ export default function Home() {
             });
         }
     );
-
-    const base64Image = data && Buffer.from(data?.data.data).toString("base64");
+    const bufferArray = data && Buffer.from(data?.data.data);
+    const base64Image = data && bufferArray.toString("base64");
+    const imageSize = Math.round(bufferArray?.byteLength / 1024);
     const screenShotHandler = (event) => {
         event.preventDefault();
 
@@ -119,18 +120,39 @@ export default function Home() {
                         sliderValue={sliderValue}
                     />
 
-                    <CustomButton
-                        style={{ marginBottom: "20vh" }}
-                        loading={!!isLoading}
-                        className={roboto.className}
-                        size="large"
-                        htmlType="submit"
-                        type="primary"
-                        colorPrimary={"#41c3c5"}
-                        colorPrimaryHover={"#18dfdf"}
-                        colorPrimaryActive={"#317779"}>
-                        Screenshot
-                    </CustomButton>
+                    <Space align="baseline">
+                        <CustomButton
+                            style={{ marginBottom: "2vh" }}
+                            loading={!!isLoading}
+                            className={roboto.className}
+                            size="large"
+                            htmlType="submit"
+                            type="primary"
+                            colorPrimary={"#41c3c5"}
+                            colorPrimaryHover={"#18dfdf"}
+                            colorPrimaryActive={"#317779"}>
+                            Screenshot
+                        </CustomButton>
+                        {!!data && !isError && (
+                            <>
+                                <CustomButton
+                                    download={true}
+                                    href={`data:image/jpeg;base64,${base64Image}`}
+                                    style={{
+                                        marginBottom: "2vh",
+                                    }}
+                                    className={roboto.className}
+                                    size="large"
+                                    type="link"
+                                    colorLink={"#32da32"}
+                                    colorLinkHover={"#69ff69"}
+                                    colorLinkActive={"#367e36"}>
+                                    Download
+                                </CustomButton>
+                                <span>{imageSize}kb</span>
+                            </>
+                        )}
+                    </Space>
 
                     {isError && (
                         <Alert
@@ -148,6 +170,10 @@ export default function Home() {
 
                         <div className={styles["preview"]}>
                             <Image
+                                rootClassName={styles["ant-image-container"]}
+                                style={{
+                                    display: "block !important",
+                                }}
                                 alt="screenshot"
                                 src={`data:image/jpeg;base64,${base64Image}`}
                             />
