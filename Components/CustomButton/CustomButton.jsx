@@ -19,6 +19,11 @@ export const CustomButton = ({
     colorPrimaryActive,
     icon,
     style,
+    href,
+    download,
+    colorLink,
+    colorLinkActive,
+    colorLinkHover,
 }) => {
     return (
         <ConfigProvider
@@ -32,10 +37,15 @@ export const CustomButton = ({
                         colorBgContainer: colorBgContainer,
                         colorTextLightSolid: colorTextLightSolid,
                         colorPrimaryActive: colorPrimaryActive,
+                        colorLink,
+                        colorLinkActive,
+                        colorLinkHover,
                     },
                 },
             }}>
             <Button
+                href={href}
+                download={download}
                 style={{ ...style }}
                 icon={icon}
                 onClick={onClick}
