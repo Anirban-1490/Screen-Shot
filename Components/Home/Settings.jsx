@@ -12,25 +12,6 @@ export const Settings = ({ setSliderValue, isSettingActive, sliderValue }) => {
             }
             className={settingStyle["settings"]}>
             <CustomDivider width={"100%"} orient="left">
-                Dimensions
-            </CustomDivider>
-
-            <Container className={settingStyle["cnt"]}>
-                <Custominput
-                    placeHolder={"Width"}
-                    name={"width"}
-                    id={"width"}
-                    inputClassName={settingStyle["md-text-input"]}
-                />
-
-                <Custominput
-                    placeHolder={"Height"}
-                    name={"height"}
-                    id={"height"}
-                    inputClassName={settingStyle["md-text-input"]}
-                />
-            </Container>
-            <CustomDivider width={"100%"} orient="left">
                 Modify
             </CustomDivider>
             <Container
