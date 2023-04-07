@@ -7,10 +7,10 @@ import {
 } from "@ant-design/icons";
 import featureStyle from "Components/Home/feature.module.scss";
 import { Card, Col, Row } from "antd";
-import { Open_Sans } from "next/font/google";
+import { Inter, Open_Sans } from "next/font/google";
 
 const openSans = Open_Sans({ subsets: ["latin"], weight: "800" });
-
+const inter = Inter({ subsets: ["latin"], weight: "500" });
 export const Feature = () => {
     const iconStyle = {
         fontSize: "3.4rem",
@@ -38,6 +38,33 @@ export const Feature = () => {
     ];
     return (
         <section className={featureStyle["section"]}>
+            <div className={featureStyle["video-container"]}>
+                <video
+                    aria-label="intro video"
+                    loop={true}
+                    className={featureStyle["intro"]}
+                    autoPlay={true}
+                    muted={true}>
+                    <source
+                        src="/Screen-shot_video_introduction.mp4"
+                        type="video/mp4"
+                    />
+                    Sorry, your browser doesn't support embedded videos, but
+                    don't worry, you can
+                    <a href="/Screen-shot_video_introduction.mp4">
+                        download the MP4
+                    </a>
+                    and watch it with your favorite video player!
+                </video>
+            </div>
+            <h2
+                className={`${inter.className} ${featureStyle["feature-header"]}`}>
+                Say hello{" "}
+                <span>
+                    <img src="/waving-hand-sign-emoji.png" alt="waving hand" />
+                </span>{" "}
+                to_____
+            </h2>
             <Row gutter={[16, 16]} wrap justify={"space-around"}>
                 {cardContent.map((content) => {
                     return (
