@@ -12,7 +12,9 @@ export const Navbar = () => {
                     Screen-<span>Shot</span>
                 </h2>
             </header>
-            <Link href={"#"}>
+            <Link
+                target="_blank"
+                href={"https://github.com/Anirban-1490/Screen-Shot"}>
                 <GithubFilled
                     style={{
                         fontSize: "1.6rem",
